@@ -172,7 +172,7 @@ def compare_figma_with_web_json(figma_json, web_json):
             for key in ref_styles:
                 ref_value = ref_styles.get(key, "N/A")
                 item_value = best_item.get(key, "N/A")
-                match = "✔" if ref_value == item_value else "✘"
+                match = "Yes" if ref_value == item_value else "No"
                 row = {
                     "title":title,
                     "key":key,

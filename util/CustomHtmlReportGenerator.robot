@@ -130,12 +130,12 @@ Generate HTML Report from JSON
     ${report_path}  Set Variable    ${OUTPUT_DIR}/${report_name}
     ${html_content}     Private_Get HTML Template for JSON    ${json_data}
     Create File        ${report_path}   ${html_content}
-    RETURN  ${report_path}
+    RETURN  ${report_name}
 
 
 Private_Get HTML Template for JSON
     [Arguments]     ${json_data}
-    ${html}=    Set Variable    <html><head><title>Pixel Perfect Testing Report</title><style>table, th, td {border: 2px solid grey;border-collapse: collapse;font-family: calibri;padding: 5px;} .desc{max-width: 700px;word-wrap: break-word;}</style></head><body><h1>Test Report</h1><table style="width:100%"><tr><th>Sr. No.</th><th class='desc'>Searched Text</th><th>Css Property</th><th>Expected Value(figma)</th><th>Actual Value(web)</th><th>Match/Mismatch?</th></tr>
+    ${html}=    Set Variable    <html><head><title>Pixel Perfect Testing Report</title><style>table, th, td {border: 2px solid grey;border-collapse: collapse;font-family: calibri;padding: 5px;} .desc{max-width: 700px;word-wrap: break-word;}</style></head><body><h1>Test Report</h1><table style="width:100%"><tr><th>Sr. No.</th><th class='desc'>Searched Text</th><th>Css Property</th><th>Expected Value(figma)</th><th>Actual Value(web)</th><th>Matching?</th></tr>
     ${last_title}       Set Variable        ${EMPTY}
     ${sr_no}       Set Variable        0
 

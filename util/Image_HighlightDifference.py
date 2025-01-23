@@ -78,7 +78,8 @@ def find_diff(path_one, path_two, out_image_dir):
     # Save or display the result
     #merged_image.show()
     timestamp = get_timestamp()
-    out_image_path=out_image_dir + "/Overlay" + timestamp + ".png"
+    out_image_name = "Overlay" + timestamp + ".png"
+    out_image_path = out_image_dir + "/" + out_image_name
     merged_image.save(out_image_path)
-    return matching_percentage, out_image_path
+    return matching_percentage, out_image_name
 

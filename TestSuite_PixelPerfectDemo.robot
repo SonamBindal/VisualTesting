@@ -14,7 +14,7 @@ Get Figma JSON Data via API
     ${file_id}      Set Variable        hritOi8jFNn2Zvf6ilrZwB
     ${node_id}      Set Variable        1202-3193
     ${FIGMA_BASE_URL}   Set Variable        https://api.figma.com/v1/files/${file_id}/nodes?ids=${node_id}
-    ${headers}      Create Dictionary       X-Figma-Token= {API_Token}
+    ${headers}      Create Dictionary       X-Figma-Token=FIGMA_ACCESS_TOKEN
     ${response}     GET     ${FIGMA_BASE_URL}       headers=${headers}
     #Write content to json file      ${CURDIR}/figma_text_nodes_raw.json     ${response.json()}
 

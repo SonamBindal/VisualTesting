@@ -23,7 +23,7 @@ Compare 2 Images And Find Difference
     ${diffImg}     Private_Get Last Updated File Path        ${COMPARISON_OUTPUT_DIR}
     Log    ${diffImg}
     ${matching%}       ${overlayImg}     Find Diff    ${img1}     ${img2}     ${COMPARISON_OUTPUT_DIR}
-    Report-Info     Comparison Result     ${matching%}      ${overlayImg}    ${diffImg}     ${pixel_perfect_report_path}
+    Report-Info     Comparison Result     ${matching%}      ${OUT_IMG_FOLDER_NAME}/${overlayImg}    ${OUT_IMG_FOLDER_NAME}/${diffImg}     ${pixel_perfect_report_path}
     RETURN      ${matching%}       ${overlayImg}    ${diffImg}
 
 Private_Get Last Updated File Path
@@ -42,4 +42,4 @@ Private_Get Last Updated File Path
         Log    ${latest_file}
     END
     Log    ${folder}/${latest_file}
-    RETURN  ${folder}/${latest_file}
+    RETURN  ${latest_file}
